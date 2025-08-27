@@ -380,3 +380,13 @@ if (is_post()) {
     // Traitement sécurisé
 }
 ```
+
+## 📅 Journal de bord / Avancement
+
+### 27/08 – Configuration initiale
+
+- Configuration complète du projet PHP MVC Starter
+- Création de la table `users` dans la base de données MySQL
+- Vérification de l’ajout et des requêtes d’insertion
+- Mise en place d’une journalisation centralisée des événements de l’application (`app_log`)
+- Vérification du bon fonctionnement du système de routing et des contrôleurs de base
