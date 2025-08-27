@@ -214,3 +214,24 @@ function generate_slug($string) {
     $string = preg_replace('/[\s-]+/', '-', $string);
     return trim($string, '-');
 } 
+
+/**
+ * Journalisation centralisée des événements de l'application
+ *
+ */
+function app_log($message) {
+    // Chemin vers le dossier et le fichier de log
+    $logDir = ROOT_PATH . '/logs';
+    $logFile = $logDir . '/app.log';
+
+    // Créer le dossier logs si inexistant
+    if (!file_exists($logDir)) {
+        mkdir($logDir, 0775, true);
+    }
+
+    // Préparer la ligne de log
+    $line = "[" . date('Y-m-d H:i:s') . "] $message\n";
+
+    // Écrire dans le fichier (ajout à la fin)
+    file_put_contents($logFile, $line, FILE_APPEND);
+}
