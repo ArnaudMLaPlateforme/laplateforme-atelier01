@@ -65,7 +65,7 @@ function auth_register()
         $password = post('password');
         $confirm_password = post('confirm_password');
 
-        // Validation
+        // Validation du formulaire
         if (empty($name) || empty($email) || empty($password)) {
             set_flash('error', 'Tous les champs sont obligatoires.');
         } elseif (!validate_email($email)) {
