@@ -76,7 +76,7 @@ function auth_register()
             set_flash('error', 'Les mots de passe ne correspondent pas.');
         } elseif (get_user_by_email($email)) {
             set_flash('error', 'Cette adresse email est déjà utilisée.');
-            // Journalisation spécifique au projet
+            // Journalisation des logs
             app_log("Tentative d'inscription avec un email déjà utilisé : $email", 'ERROR');
         } else {
             // Créer l'utilisateur
